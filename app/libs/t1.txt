@@ -1,0 +1,19 @@
+7.采用oracle解题
+	(1) select * from A a where a.sex=0 and rownum<=5 order by a.age desc;
+	
+	(2) list<B> = select * from B b where b.rel=0 (所有夫妻)
+	    List<A>; // 结果集
+	    for(int i = 0; i <= list<B>.size(); i++){
+		A1 = select * from A a where a.id=list<B>.get(i).id1;
+		A2 = select * from A a where a.id=list<B>.get(i).id2;
+		if(A1.age  + A2.age > 60){
+		   List<A>.add(A1);
+		   List<A>.add(A2);
+		}
+	    }
+	    retuurn list<A>;
+
+	(3) delete from table、drop table info、truncate table info;
+
+	    仅删除数据、删除数据及表结构、删除数据及表结构(注：且不可恢复，前面两种可分别通过日志和闪回恢复)
+	    
